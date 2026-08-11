@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 100" width="540" height="100">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;family=Montserrat:wght@500;600;700&amp;display=swap');
+      .brand-ornellas { font-family: 'Cinzel', 'Playfair Display', serif; font-weight: 700; font-size: 48px; fill: #9E1B22; letter-spacing: -0.5px; }
+      .brand-ceotto { font-family: 'Cinzel', 'Playfair Display', serif; font-weight: 700; font-size: 48px; fill: #0B2046; letter-spacing: -0.5px; }
+      .brand-sub { font-family: 'Montserrat', 'Inter', sans-serif; font-weight: 600; font-size: 13px; fill: #0F172A; letter-spacing: 3.2px; }
+    </style>
+  </defs>
+  <text x="5" y="48">
+    <tspan class="brand-ornellas">ORNELLAS</tspan><tspan class="brand-ceotto">CEOTTO</tspan>
+  </text>
+  <text x="7" y="80" class="brand-sub">RECUPERAÇÃO DE CRÉDITO E DEFESA PATRIMONIAL</text>
+</svg>
