@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ornellas Ceotto Advocacia | Recuperação de Crédito e Defesa Patrimonial</title>
-  <meta name="description"
+  <title data-i18n-title="meta.title">Ornellas Ceotto Advocacia | Recuperação de Crédito e Defesa Patrimonial</title>
+  <meta name="description" data-i18n-meta="meta.desc"
     content="Escritório especializado em Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial. Atuação técnica e estratégica em todo o Brasil." />
 
   <!-- Favicon -->
@@ -28,26 +28,86 @@
         </a>
 
         <ul class="nav-links" id="navLinks">
-          <li><a href="#hero" class="nav-link active">Início</a></li>
-          <li><a href="#sobre" class="nav-link">Sobre</a></li>
-          <li><a href="#servicos" class="nav-link">Serviços</a></li>
-          <li><a href="#contato" class="nav-link">Contato</a></li>
+          <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Início</a></li>
+          <li><a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#servicos" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+          <li><a href="#contato" class="nav-link" data-i18n="nav.contact">Contato</a></li>
         </ul>
 
         <div class="header-actions">
+          <!-- Language Switcher Dropdown -->
+          <div class="lang-switcher" id="langSwitcher">
+            <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar idioma / Select language">
+              <span class="lang-flag" id="currentFlag">
+                <svg class="flag-icon" viewBox="0 0 24 16" width="20" height="13.3" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="16" rx="2" fill="#009B3A"/>
+                  <polygon points="12,2 21.5,8 12,14 2.5,8" fill="#FEDF01"/>
+                  <circle cx="12" cy="8" r="3.7" fill="#002776"/>
+                  <path d="M8.8 8.8 C10.2 7.3 13.8 7.3 15.2 8.8" stroke="#FFFFFF" stroke-width="0.7" fill="none"/>
+                </svg>
+              </span>
+              <span class="lang-code" id="currentLangCode">PT</span>
+              <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div class="lang-dropdown" id="langDropdown" role="menu">
+              <button type="button" class="lang-option active" data-lang="pt" role="menuitem">
+                <span class="lang-flag">
+                  <svg class="flag-icon" viewBox="0 0 24 16" width="20" height="13.3" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="16" rx="2" fill="#009B3A"/>
+                    <polygon points="12,2 21.5,8 12,14 2.5,8" fill="#FEDF01"/>
+                    <circle cx="12" cy="8" r="3.7" fill="#002776"/>
+                    <path d="M8.8 8.8 C10.2 7.3 13.8 7.3 15.2 8.8" stroke="#FFFFFF" stroke-width="0.7" fill="none"/>
+                  </svg>
+                </span>
+                <span class="lang-name">Português</span>
+                <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="lang-option" data-lang="en" role="menuitem">
+                <span class="lang-flag">
+                  <svg class="flag-icon" viewBox="0 0 24 16" width="20" height="13.3" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="16" rx="2" fill="#B22234"/>
+                    <path d="M0 2.46h24v2.46H0zm0 4.92h24v2.46H0zm0 4.92h24v1.24H0z" fill="#FFFFFF"/>
+                    <rect width="10" height="8.6" rx="1.5" fill="#3C3B6E"/>
+                    <circle cx="2.2" cy="2" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="5" cy="2" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="7.8" cy="2" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="3.6" cy="3.5" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="6.4" cy="3.5" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="2.2" cy="5" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="5" cy="5" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="7.8" cy="5" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="3.6" cy="6.5" r="0.6" fill="#FFFFFF"/>
+                    <circle cx="6.4" cy="6.5" r="0.6" fill="#FFFFFF"/>
+                  </svg>
+                </span>
+                <span class="lang-name">English</span>
+                <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Compact, Refined Wine Contact Button -->
           <a href="https://wa.me/5527999579004?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20advogado%20especialista."
-            target="_blank" rel="noopener noreferrer" class="btn btn-red">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            target="_blank" rel="noopener noreferrer" class="btn btn-wine-header" id="headerContactBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            <span>Falar no WhatsApp</span>
+            <span data-i18n="header.contact_btn">Fale Conosco</span>
           </a>
         </div>
 
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -65,305 +125,255 @@
     <section class="hero-section" id="hero">
       <div class="container">
         <div class="hero-content">
-          <span class="hero-badge">ADVOCACIA ESTRATÉGICA</span>
-          <h1 class="hero-title">Recuperação de Crédito, Execuções e Defesa Patrimonial<span class="dot">.</span></h1>
-          <p class="hero-subtitle">Atuação técnica e estratégica para proteger seus direitos e recuperar o que é seu.
-          </p>
+          <span class="hero-badge" data-i18n="hero.badge">ADVOCACIA ESTRATÉGICA</span>
+          <h1 class="hero-title" data-i18n="hero.title">Recuperação de Crédito, Execuções e Defesa Patrimonial<span class="dot">.</span></h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Atuação técnica e estratégica para proteger seus direitos e recuperar o que é seu.</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         STATS BAR
+         ABOUT SECTION (SOBRE NÓS - EXPANDABLE)
          ========================================== -->
-    <div class="stats-bar">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div>
-            <div class="stat-number">+300</div>
-            <div class="stat-label">Cases conduzidos com excelência</div>
-          </div>
-        </div>
+    <section class="about-section" id="sobre">
+      <div class="container">
+        <div class="about-content">
+          <span class="section-badge" data-i18n="about.badge">SOBRE NÓS</span>
+          <h2 class="section-title" data-i18n="about.title">COMPROMISSO COM<br>EXCELÊNCIA E RESULTADOS</h2>
 
-        <div class="stat-item">
-          <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-              <polyline points="17 6 23 6 23 12"></polyline>
-            </svg>
-          </div>
-          <div>
-            <div class="stat-number">+R$ 100 milhões</div>
-            <div class="stat-label">em créditos recuperados para nossos clientes</div>
-          </div>
-        </div>
+          <p class="about-text" data-i18n="about.p1">
+            <strong>ORNELLAS CEOTTO Sociedade Individual de Advocacia</strong> é um escritório especializado em
+            Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial.
+          </p>
 
-        <div class="stat-item">
-          <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
-              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
-              <path d="M7 21h10"></path>
-              <path d="M12 3v18"></path>
-              <path d="M3 7h18"></path>
-            </svg>
-          </div>
-          <div>
-            <div class="stat-number">Atuação</div>
-            <div class="stat-label">especializada e estratégica em todo o Brasil</div>
-          </div>
-        </div>
+          <!-- Expandable Box -->
+          <div class="about-expandable-box" id="aboutExpandableBox">
+            <p class="about-text" data-i18n="about.p2">
+              Atuamos com foco em resultados, estratégia jurídica e atendimento personalizado para empresas e pessoas
+              físicas que precisam proteger seus direitos e recuperar o que é seu.
+            </p>
+            <p class="about-text" data-i18n="about.p3">
+              Com atuação técnica e estratégica em todo o Brasil, combinamos inteligência jurídica avançada, ferramentas forenses de localização de ativos e rigor processual para assegurar a máxima efetividade das medidas judiciais e extrajudiciais.
+            </p>
 
-        <div class="stat-item">
-          <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <path d="m9 12 2 2 4-4"></path>
-            </svg>
+            <div class="about-pillars-grid">
+              <div class="about-pillar-card">
+                <div class="about-pillar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <span class="about-pillar-text" data-i18n="about.pillar1">Rigor Técnico & Processual</span>
+              </div>
+              <div class="about-pillar-card">
+                <div class="about-pillar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  </svg>
+                </div>
+                <span class="about-pillar-text" data-i18n="about.pillar2">Inteligência Investigativa</span>
+              </div>
+              <div class="about-pillar-card">
+                <div class="about-pillar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+                <span class="about-pillar-text" data-i18n="about.pillar3">Atuação Nacional Estratégica</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <div class="stat-number">Soluções jurídicas</div>
-            <div class="stat-label">seguras para proteger seu patrimônio</div>
+
+          <div class="about-actions">
+            <button type="button" class="btn btn-about-expand" id="aboutExpandBtn" aria-expanded="false">
+              <span id="aboutExpandBtnText" data-i18n="about.btn_expand">Ler história completa</span>
+              <svg id="aboutExpandBtnIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <a href="#servicos" class="btn btn-outline-red" data-i18n="about.cta">Conheça nossas áreas de atuação</a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- ==========================================
-         SERVICES SECTION (NOSSAS ÁREAS DE ATUAÇÃO)
+         SERVICES SECTION (3 VERTICAL EXPANDABLE BOXES)
          ========================================== -->
     <section class="services-section" id="servicos">
       <div class="container">
         <div class="section-header-center">
-          <span class="section-badge">NOSSAS ÁREAS DE ATUAÇÃO</span>
-          <h2 class="section-title">Soluções jurídicas para empresas e pessoas físicas</h2>
+          <div class="section-badge-wrapper">
+            <span class="badge-line"></span>
+            <span class="section-badge" data-i18n="services.badge">NOSSAS ÁREAS DE ATUAÇÃO</span>
+            <span class="badge-line"></span>
+          </div>
+          <h2 class="section-title dark-text" data-i18n="services.title">SOLUÇÕES JURÍDICAS ESTRATÉGICAS</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">Atuação personalizada com alta precisão técnica para empresas e pessoas físicas em todo o Brasil.</p>
         </div>
 
-        <div class="services-grid">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
+        <div class="services-vertical-list">
+          <!-- Service 1: Recuperação de Crédito -->
+          <div class="service-expandable-card" data-service="recuperacao">
+            <div class="service-card-header">
+              <div class="service-card-identity">
+                <div class="service-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <div class="service-identity-text">
+                  <h3 class="service-card-title" data-i18n="services.recuperacao.title">RECUPERAÇÃO DE CRÉDITO</h3>
+                  <p class="service-card-teaser" data-i18n="services.recuperacao.desc">Atuamos de forma estratégica para recuperar valores devidos com máxima celeridade e efetividade.</p>
+                </div>
+              </div>
+              <button type="button" class="btn-service-toggle" aria-expanded="false">
+                <span class="service-toggle-text" data-i18n="services.btn_expand">Conhecer atuação</span>
+                <svg class="service-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
             </div>
-            <h3 class="service-title">Recuperação de Crédito</h3>
-            <p class="service-desc">Atuamos de forma estratégica para recuperar valores devidos de maneira rápida e
-              eficiente.</p>
-            <span class="service-link" data-service="recuperacao">Saiba mais &rarr;</span>
+
+            <div class="service-card-expanded">
+              <div class="service-expanded-inner">
+                <div class="service-expanded-grid">
+                  <div class="service-expanded-details">
+                    <h4 class="service-expanded-subtitle" data-i18n="services.recuperacao.detail_title">Nossa Atuação Estratégica Inclui:</h4>
+                    <ul class="service-features-list">
+                      <li data-i18n="services.recuperacao.item1">Negociação extrajudicial e notificações notificatórias estratégicas.</li>
+                      <li data-i18n="services.recuperacao.item2">Cobrança judicial de títulos de crédito (Cheques, Duplicatas, Promissórias).</li>
+                      <li data-i18n="services.recuperacao.item3">Execução de Contratos e Títulos Executivos Extrajudiciais.</li>
+                      <li data-i18n="services.recuperacao.item4">Localização estratégica de devedores e mapeamento patrimonial.</li>
+                    </ul>
+                  </div>
+                  <div class="service-expanded-cta-col">
+                    <div class="service-cta-box">
+                      <p class="service-cta-text" data-i18n="services.recuperacao.cta_hint">Precisa recuperar ativos ou valores devidos à sua empresa?</p>
+                      <a href="https://wa.me/5527999579004?text=Ol%C3%A1!%20Gostaria%20de%20consultoria%20em%20Recupera%C3%A7%C3%A3o%20de%20Cr%C3%A9dito."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-wine-header service-action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span data-i18n="services.recuperacao.cta_btn">Falar com especialista</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m14.5 12.5-8 8a2.12 2.12 0 0 1-3-3l8-8"></path>
-                <path d="m16 16 6-6"></path>
-                <path d="m8 8 6-6"></path>
-                <path d="m9 7 8 8"></path>
-                <path d="m21 11-8-8"></path>
-              </svg>
+          <!-- Service 2: Defesa Patrimonial -->
+          <div class="service-expandable-card" data-service="defesa">
+            <div class="service-card-header">
+              <div class="service-card-identity">
+                <div class="service-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div class="service-identity-text">
+                  <h3 class="service-card-title" data-i18n="services.defesa.title">DEFESA PATRIMONIAL</h3>
+                  <p class="service-card-teaser" data-i18n="services.defesa.desc">Protegemos seu patrimônio pessoal e empresarial contra constrições indevidas e riscos sucessórios.</p>
+                </div>
+              </div>
+              <button type="button" class="btn-service-toggle" aria-expanded="false">
+                <span class="service-toggle-text" data-i18n="services.btn_expand">Conhecer atuação</span>
+                <svg class="service-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
             </div>
-            <h3 class="service-title">Execuções</h3>
-            <p class="service-desc">Conduzimos execuções judiciais com técnica e agilidade para garantir o cumprimento
-              de suas decisões.</p>
-            <span class="service-link" data-service="execucoes">Saiba mais &rarr;</span>
+
+            <div class="service-card-expanded">
+              <div class="service-expanded-inner">
+                <div class="service-expanded-grid">
+                  <div class="service-expanded-details">
+                    <h4 class="service-expanded-subtitle" data-i18n="services.defesa.detail_title">Soluções e Medidas Protetivas:</h4>
+                    <ul class="service-features-list">
+                      <li data-i18n="services.defesa.item1">Estruturação preventiva e planejamento sucessório e patrimonial.</li>
+                      <li data-i18n="services.defesa.item2">Embargos à Execução e Embargos de Terceiro contra penhoras ilegítimas.</li>
+                      <li data-i18n="services.defesa.item3">Proteção de bem de família e ativos empresariais indispensáveis.</li>
+                      <li data-i18n="services.defesa.item4">Reestruturação preventiva de haveres e contratos societários.</li>
+                    </ul>
+                  </div>
+                  <div class="service-expanded-cta-col">
+                    <div class="service-cta-box">
+                      <p class="service-cta-text" data-i18n="services.defesa.cta_hint">Deseja proteger seus bens e ativos com segurança jurídica?</p>
+                      <a href="https://wa.me/5527999579004?text=Ol%C3%A1!%20Gostaria%20de%20consultoria%20em%20Defesa%20Patrimonial."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-wine-header service-action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span data-i18n="services.defesa.cta_btn">Falar com especialista</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h3 class="service-title">Defesa Patrimonial</h3>
-            <p class="service-desc">Protegemos seu patrimônio contra riscos e constrições indevidas, com planejamento e
-              medidas jurídicas eficazes.</p>
-            <span class="service-link" data-service="defesa">Saiba mais &rarr;</span>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </div>
-            <h3 class="service-title">Investigação Patrimonial</h3>
-            <p class="service-desc">Investigamos bens e direitos para localizar ativos e fortalecer suas ações
-              judiciais.</p>
-            <span class="service-link" data-service="investigacao">Saiba mais &rarr;</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         DIFFERENTIALS SECTION (NOSSOS DIFERENCIAIS)
-         ========================================== -->
-    <section class="differentials-section">
-      <div class="container">
-        <div class="differentials-grid">
-          <div class="differentials-left">
-            <span class="section-badge">NOSSOS DIFERENCIAIS</span>
-            <h2 class="section-title dark-bg">Estratégia, técnica e compromisso com resultados<span class="dot">.</span>
-            </h2>
-            <p class="section-desc dark-bg">Nossa atuação é pautada pela excelência técnica, atendimento personalizado e
-              foco em resultados concretos para o cliente.</p>
-          </div>
-
-          <div class="differentials-cards">
-            <!-- Diff 1 -->
-            <div class="diff-card">
-              <div class="diff-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                </svg>
+          <!-- Service 3: Investigação Patrimonial -->
+          <div class="service-expandable-card" data-service="investigacao">
+            <div class="service-card-header">
+              <div class="service-card-identity">
+                <div class="service-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <div class="service-identity-text">
+                  <h3 class="service-card-title" data-i18n="services.investigacao.title">INVESTIGAÇÃO PATRIMONIAL</h3>
+                  <p class="service-card-teaser" data-i18n="services.investigacao.desc">Investigamos minuciosamente bens, direitos e fraudes para viabilizar o recebimento de valores e instruir disputas.</p>
+                </div>
               </div>
-              <h3 class="diff-title">Atuação especializada</h3>
-              <p class="diff-desc">Foco em Execuções, Recuperação e Investigação Patrimonial.</p>
-            </div>
-
-            <!-- Diff 2 -->
-            <div class="diff-card">
-              <div class="diff-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
+              <button type="button" class="btn-service-toggle" aria-expanded="false">
+                <span class="service-toggle-text" data-i18n="services.btn_expand">Conhecer atuação</span>
+                <svg class="service-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
+              </button>
+            </div>
+
+            <div class="service-card-expanded">
+              <div class="service-expanded-inner">
+                <div class="service-expanded-grid">
+                  <div class="service-expanded-details">
+                    <h4 class="service-expanded-subtitle" data-i18n="services.investigacao.detail_title">Tecnologia & Inteligência Investigativa:</h4>
+                    <ul class="service-features-list">
+                      <li data-i18n="services.investigacao.item1">Pesquisa aprofundada de imóveis, veículos, embarcações e aeronaves.</li>
+                      <li data-i18n="services.investigacao.item2">Identificação de grupos econômicos de fato, empresas de fachada e laranjas.</li>
+                      <li data-i18n="services.investigacao.item3">Rastreamento de ativos no exterior e participações societárias ocultas.</li>
+                      <li data-i18n="services.investigacao.item4">Produção de relatórios probatórios robustos para instrução de processos.</li>
+                    </ul>
+                  </div>
+                  <div class="service-expanded-cta-col">
+                    <div class="service-cta-box">
+                      <p class="service-cta-text" data-i18n="services.investigacao.cta_hint">Precisa rastrear bens e localizar patrimônio oculto de devedores?</p>
+                      <a href="https://wa.me/5527999579004?text=Ol%C3%A1!%20Gostaria%20de%20consultoria%20em%20Investiga%C3%A7%C3%A3o%20Patrimonial."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-wine-header service-action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span data-i18n="services.investigacao.cta_btn">Falar com especialista</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 class="diff-title">Atendimento personalizado</h3>
-              <p class="diff-desc">Soluções jurídicas sob medida para cada caso.</p>
-            </div>
-
-            <!-- Diff 3 -->
-            <div class="diff-card">
-              <div class="diff-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                </svg>
-              </div>
-              <h3 class="diff-title">Estratégias eficientes</h3>
-              <p class="diff-desc">Planejamento jurídico com foco em resultados reais.</p>
-            </div>
-
-            <!-- Diff 4 -->
-            <div class="diff-card">
-              <div class="diff-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-              </div>
-              <h3 class="diff-title">Agilidade e comprometimento</h3>
-              <p class="diff-desc">Atuação rápida e eficiente em todas as etapas do processo.</p>
-            </div>
-
-            <!-- Diff 5 -->
-            <div class="diff-card">
-              <div class="diff-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-              </div>
-              <h3 class="diff-title">Transparência</h3>
-              <p class="diff-desc">Comunicação clara e constante com nossos clientes.</p>
-            </div>
-
-            <!-- Diff 6 -->
-            <div class="diff-card">
-              <div class="diff-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="diff-title">Atuação em todo o Brasil</h3>
-              <p class="diff-desc">Atendimento digital e estratégias jurídicas em âmbito nacional.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         PROCESS SECTION (COMO TRABALHAMOS)
-         ========================================== -->
-    <section class="process-section">
-      <div class="container">
-        <div class="section-header-center">
-          <span class="section-badge">COMO TRABALHAMOS</span>
-          <h2 class="section-title">Um processo claro e eficiente</h2>
-        </div>
-
-        <div class="timeline-wrapper">
-          <div class="timeline-line"></div>
-          <div class="timeline-steps">
-            <!-- Step 1 -->
-            <div class="step-card">
-              <div class="step-number">1</div>
-              <h3 class="step-title">Contato</h3>
-              <p class="step-desc">Você nos procura e apresenta seu caso.</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-card">
-              <div class="step-number">2</div>
-              <h3 class="step-title">Análise</h3>
-              <p class="step-desc">Realizamos uma análise técnica e estratégica da situação.</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card">
-              <div class="step-number">3</div>
-              <h3 class="step-title">Estratégia</h3>
-              <p class="step-desc">Desenvolvemos o melhor plano de ação para o seu caso.</p>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="step-card">
-              <div class="step-number">4</div>
-              <h3 class="step-title">Execução</h3>
-              <p class="step-desc">Colocamos a estratégia em prática com técnica e agilidade.</p>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="step-card">
-              <div class="step-number">5</div>
-              <h3 class="step-title">Resultado</h3>
-              <p class="step-desc">Buscamos o melhor resultado para proteger seus direitos.</p>
             </div>
           </div>
         </div>
@@ -371,102 +381,36 @@
     </section>
 
     <!-- ==========================================
-         ABOUT SECTION (SOBRE O ESCRITÓRIO)
-         ========================================== -->
-    <section class="about-section" id="sobre">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-image-wrapper">
-            <div class="about-image-frame">
-              <img src="/images/office-interior.png" alt="Escritório Ornellas Ceotto Advocacia" />
-            </div>
-          </div>
-
-          <div class="about-content">
-            <span class="section-badge">SOBRE O ESCRITÓRIO</span>
-            <h2 class="section-title">Compromisso com excelência e resultados</h2>
-
-            <p class="about-text">
-              <strong>ORNELLAS CEOTTO Sociedade Individual de Advocacia</strong> é um escritório especializado em
-              Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial.
-            </p>
-            <p class="about-text">
-              Atuamos com foco em resultados, estratégia jurídica e atendimento personalizado para empresas e pessoas
-              físicas que precisam proteger seus direitos e recuperar o que é seu.
-            </p>
-
-            <div class="about-actions">
-              <a href="#contato" class="btn btn-outline-red">Conheça mais sobre o escritório</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         CTA BANNER SECTION
-         ========================================== -->
-    <section class="cta-banner-section">
-      <div class="container">
-        <div class="cta-container">
-          <div class="cta-left">
-            <div class="cta-icon-badge">
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </div>
-            <div>
-              <h2 class="cta-title">Precisa recuperar um crédito ou proteger seu patrimônio?</h2>
-              <p class="cta-desc">Fale agora com um advogado especialista.</p>
-            </div>
-          </div>
-
-          <div class="cta-right">
-            <a href="https://wa.me/5527999579004?text=Ol%C3%A1!%20Preciso%20de%20atendimento%20para%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20ou%20defesa%20patrimonial."
-              target="_blank" rel="noopener noreferrer" class="btn btn-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span>Falar no WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         FAQ & CONTACT SECTION
-         ========================================== -->
-    <!-- ==========================================
-         CONTACT SECTION
+         CONTACT SECTION (FORM & DIRECT CHANNELS)
          ========================================== -->
     <section class="faq-contact-section" id="contato">
       <div class="container">
-        <div class="contact-full-wrapper">
-          <div class="contact-form-card">
-            <h3 class="form-header">Solicite um atendimento</h3>
+        <div class="contact-grid-split">
 
-            <form id="contactForm">
+          <!-- Left: Big Form Column -->
+          <div class="contact-form-column">
+            <div class="contact-header-left">
+              <h2 class="contact-title" data-i18n="contact.title">SOLICITE UM ATENDIMENTO</h2>
+              <p class="contact-subtitle" data-i18n="contact.subtitle">Preencha os campos abaixo para receber uma análise preliminar estratégica.</p>
+            </div>
+
+            <form id="contactForm" class="contact-form-dark">
               <div class="form-row">
-                <input type="text" id="formName" class="form-input" placeholder="Nome completo" required />
-                <input type="tel" id="formPhone" class="form-input" placeholder="Telefone" />
+                <input type="text" id="formName" class="form-input-dark" placeholder="Nome completo" data-i18n-placeholder="contact.name_placeholder" required />
+                <input type="tel" id="formPhone" class="form-input-dark" placeholder="Telefone" data-i18n-placeholder="contact.phone_placeholder" />
               </div>
 
               <div class="form-group">
-                <input type="email" id="formEmail" class="form-input" placeholder="E-mail" />
+                <input type="email" id="formEmail" class="form-input-dark" placeholder="E-mail" data-i18n-placeholder="contact.email_placeholder" />
               </div>
 
               <div class="form-group">
-                <textarea id="formMessage" class="form-textarea" placeholder="Como podemos ajudar?"
+                <textarea id="formMessage" class="form-textarea-dark" placeholder="Como podemos ajudar?" data-i18n-placeholder="contact.msg_placeholder"
                   required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-red form-submit-btn">
-                <span>Enviar mensagem</span>
+              <button type="submit" class="btn btn-wine-header form-submit-btn">
+                <span data-i18n="contact.submit">Enviar mensagem</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -475,6 +419,64 @@
               </button>
             </form>
           </div>
+
+          <!-- Right: Compact Immediate Contacts Column -->
+          <div class="contact-info-column">
+            <div class="contact-info-header">
+              <h3 class="contact-info-title" data-i18n="contact.direct_channels_title">CONTATOS IMEDIATOS</h3>
+              <p class="contact-info-subtitle" data-i18n="contact.direct_channels_subtitle">Fale diretamente com nossa equipe jurídica:</p>
+            </div>
+
+            <div class="contact-cards-list">
+              <!-- Email Card -->
+              <a href="mailto:gabriel.ornellas.ceotto@gmail.com" class="contact-info-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label" data-i18n="contact.email_label">E-mail</span>
+                  <span class="contact-card-value email-value">gabriel.ornellas.ceotto@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- Instagram Card -->
+              <a href="https://instagram.com/gabriel.ornellas.ceotto" target="_blank" rel="noopener noreferrer" class="contact-info-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label" data-i18n="contact.instagram_label">Instagram</span>
+                  <span class="contact-card-value">@gabriel.ornellas.ceotto</span>
+                </div>
+              </a>
+
+              <!-- National Practice info -->
+              <div class="contact-info-card info-static">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label" data-i18n="contact.coverage_label">Atuação Nacional</span>
+                  <span class="contact-card-value sub-text" data-i18n="contact.coverage_sub">Atendimento em todo o Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -485,79 +487,30 @@
        ========================================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-
-        <!-- Col 1 -->
-        <div class="footer-brand">
-          <img src="/images/logo-light.svg" alt="Ornellas Ceotto Advocacia" />
-          <p class="footer-brand-desc">
+      <div class="footer-compact-wrap">
+        <div class="footer-brand-lockup">
+          <a href="#hero" class="footer-logo-link" aria-label="Ornellas Ceotto Advocacia">
+            <img src="/images/logo-light.svg" alt="Ornellas Ceotto Advocacia" class="footer-logo" />
+          </a>
+          <div class="footer-v-divider" aria-hidden="true"></div>
+          <p class="footer-brand-desc" data-i18n="footer.brand_desc">
             Especialistas em Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial. Atuação
             estratégica para proteger seus direitos e gerar resultados.
           </p>
         </div>
-
-        <!-- Col 2 -->
-        <div>
-          <h4 class="footer-col-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="#hero">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3 -->
-        <div>
-          <h4 class="footer-col-title">Áreas de atuação</h4>
-          <ul class="footer-links">
-            <li><a href="#servicos">Recuperação de Crédito</a></li>
-            <li><a href="#servicos">Execuções</a></li>
-            <li><a href="#servicos">Defesa Patrimonial</a></li>
-            <li><a href="#servicos">Investigação Patrimonial</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4 -->
-        <div>
-          <h4 class="footer-col-title">Contato</h4>
-          <ul class="footer-links">
-            <li><a href="https://wa.me/5527999579004" target="_blank">27 99957-9004</a></li>
-            <li><a href="mailto:gabriel.ornellas.ceotto@gmail.com">gabriel.ornellas.ceotto@gmail.com</a></li>
-            <li><a href="https://instagram.com/gabriel.ornellas.ceotto" target="_blank">gabriel.ornellas.ceotto</a></li>
-          </ul>
-        </div>
       </div>
 
       <div class="footer-bottom">
-        <div>
+        <div data-i18n="footer.copyright">
           &copy; 2024 Ornellas Ceotto Sociedade Individual de Advocacia. Todos os direitos reservados.
         </div>
         <div class="footer-bottom-links">
-          <a href="#">Política de Privacidade</a>
-          <a href="#">Termos de Uso</a>
+          <a href="#" data-i18n="footer.privacy">Política de Privacidade</a>
+          <a href="#" data-i18n="footer.terms">Termos de Uso</a>
         </div>
       </div>
     </div>
   </footer>
-
-
-  <!-- Service Details Modal -->
-  <div class="modal-overlay" id="serviceModal">
-    <div class="modal-container">
-      <button class="modal-close-btn" id="modalClose" aria-label="Fechar Modal">&times;</button>
-      <h3 class="section-title" id="modalTitle" style="font-size: 1.6rem; margin-bottom: 1rem;">Título do Serviço</h3>
-      <div id="modalBody">
-        <!-- Dynamic content filled via JS -->
-      </div>
-      <div style="margin-top: 1.75rem; text-align: right;">
-        <a href="https://wa.me/5527999579004?text=Ol%C3%A1!%20Gostaria%20de%20atendimento%20especializado."
-          target="_blank" rel="noopener noreferrer" class="btn btn-red">
-          <span>Falar com especialista no WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </div>
 
   <script type="module" src="/main.js"></script>
 </body>
