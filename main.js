@@ -109,18 +109,18 @@ const translations = {
       email_placeholder: "E-mail",
       msg_placeholder: "Como podemos ajudar?",
       submit: "Enviar mensagem",
+      submitting: "Enviando mensagem...",
+      success_title: "Mensagem enviada com sucesso!",
+      success_desc: "Recebemos suas informações. Nossa equipe entrará em contato em breve.",
+      error_title: "Erro ao enviar mensagem",
+      error_desc: "Ocorreu um problema no envio. Por favor, tente novamente ou fale conosco pelo WhatsApp.",
       direct_channels_title: "CONTATOS IMEDIATOS",
       direct_channels_subtitle: "Fale diretamente com nossa equipe jurídica:",
       email_label: "E-mail Institucional",
       instagram_label: "Instagram Oficial",
       coverage_label: "Atuação Nacional",
       coverage_sub: "Atendimento em todo o Brasil",
-      alert_missing: "Por favor, preencha seu nome e a mensagem.",
-      whatsapp_intro: "Olá! Meu nome é",
-      whatsapp_phone: "Telefone",
-      whatsapp_email: "E-mail",
-      whatsapp_msg: "Mensagem",
-      whatsapp_not_informed: "Não informado"
+      alert_missing: "Por favor, preencha todos os campos obrigatórios (Nome, E-mail e Mensagem)."
     },
     footer: {
       brand_desc: "Especialistas em Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial. Atuação estratégica para proteger seus direitos e gerar resultados.",
@@ -209,18 +209,18 @@ const translations = {
       email_placeholder: "Email address",
       msg_placeholder: "How can we help you?",
       submit: "Send message",
+      submitting: "Sending message...",
+      success_title: "Message sent successfully!",
+      success_desc: "We received your information. Our legal team will reach out to you shortly.",
+      error_title: "Error sending message",
+      error_desc: "An issue occurred while sending. Please try again or reach out via WhatsApp.",
       direct_channels_title: "DIRECT CHANNELS",
       direct_channels_subtitle: "Connect directly with our legal team:",
       email_label: "Institutional Email",
       instagram_label: "Official Instagram",
       coverage_label: "National Practice",
       coverage_sub: "Legal services throughout Brazil",
-      alert_missing: "Please fill in your name and message.",
-      whatsapp_intro: "Hello! My name is",
-      whatsapp_phone: "Phone",
-      whatsapp_email: "Email",
-      whatsapp_msg: "Message",
-      whatsapp_not_informed: "Not provided"
+      alert_missing: "Please fill in all required fields (Name, Email, and Message)."
     },
     footer: {
       brand_desc: "Specialists in Credit Recovery, Judicial Enforcement, Asset Protection, and Asset Tracing. Strategic legal counsel to protect your rights and deliver real results.",
@@ -591,6 +591,9 @@ document.addEventListener('DOMContentLoaded', () => {
           langSwitcher.classList.remove('open');
           if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
         }
+        if (typeof closeMobileMenu === 'function') {
+          closeMobileMenu();
+        }
 
         header.classList.remove('header-revealed');
         header.classList.add('header-hidden');
@@ -612,54 +615,82 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  // 5. Mobile navigation menu toggle
+  // 5. Mobile navigation menu toggle & interactions
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
 
+  const closeMobileMenu = () => {
+    if (navLinks && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      if (mobileBtn) {
+        mobileBtn.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileBtn.setAttribute('aria-label', currentLang === 'en' ? 'Open Menu' : 'Abrir Menu');
+      }
+    }
+  };
+
+  const openMobileMenu = () => {
+    if (navLinks) {
+      navLinks.classList.add('open');
+      if (mobileBtn) {
+        mobileBtn.classList.add('open');
+        mobileBtn.setAttribute('aria-expanded', 'true');
+        mobileBtn.setAttribute('aria-label', currentLang === 'en' ? 'Close Menu' : 'Fechar Menu');
+      }
+    }
+  };
+
   if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = navLinks.classList.contains('open');
-      mobileBtn.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
-    // Close mobile menu when clicking link
+    // Close mobile menu when clicking any nav link
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+        closeMobileMenu();
       });
     });
+
+    // Close mobile menu when clicking outside header
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu on window resize above 768px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
+      }
+    }, { passive: true });
   }
 
-  // 6. Service Expandable Cards logic (Interactive in-place expansion)
-  document.querySelectorAll('.service-expandable-card').forEach(card => {
-    const header = card.querySelector('.service-card-header');
-    const toggleBtn = card.querySelector('.btn-service-toggle');
-    const toggleText = card.querySelector('.service-toggle-text');
+  // 6. Services are now permanently open vertical boxes (no accordion needed)
 
-    const toggleCard = () => {
-      const isExpanded = card.classList.toggle('expanded');
-      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', isExpanded);
-      
-      const dict = translations[currentLang] ? translations[currentLang].services : translations.pt.services;
-      if (toggleText) {
-        toggleText.textContent = isExpanded ? dict.btn_collapse : dict.btn_expand;
-      }
-    };
-
-    if (header) {
-      header.addEventListener('click', (e) => {
-        // Prevent opening if clicking direct CTA inside expanded body
-        if (e.target.closest('.service-action-btn')) return;
-        toggleCard();
-      });
-    }
-  });
-
-  // 7. Contact Form submission logic -> Formats and opens WhatsApp message
+  // 7. Contact Form submission logic -> Sends via FormSubmit AJAX to email with visual feedback
   const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const formSubmitBtn = document.getElementById('formSubmitBtn');
+  const formSubmitText = document.getElementById('formSubmitText');
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('formName').value.trim();
@@ -669,23 +700,113 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const dict = translations[currentLang] ? translations[currentLang].contact : translations.pt.contact;
 
-      if (!name || !message) {
-        alert(dict.alert_missing);
+      if (!name || !email || !message) {
+        if (formStatus) {
+          formStatus.className = 'form-status-alert error';
+          formStatus.innerHTML = `
+            <svg class="form-status-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div class="form-status-content">
+              <span class="form-status-title">${dict.alert_missing}</span>
+            </div>
+          `;
+          formStatus.style.display = 'flex';
+        }
         return;
       }
 
-      // Format WhatsApp message according to selected language
-      const targetPhone = '5527999579004';
-      const text = `${dict.whatsapp_intro} *${name}*.\n` +
-                   `${dict.whatsapp_phone}: ${phone || dict.whatsapp_not_informed}\n` +
-                   `${dict.whatsapp_email}: ${email || dict.whatsapp_not_informed}\n\n` +
-                   `*${dict.whatsapp_msg}:* ${message}`;
+      // 1. Loading State
+      if (formSubmitBtn) {
+        formSubmitBtn.disabled = true;
+        if (formSubmitText) formSubmitText.textContent = dict.submitting;
+        const iconEl = document.getElementById('formSubmitIcon');
+        if (iconEl) {
+          iconEl.outerHTML = `<span id="formSubmitIcon" class="form-submit-spinner"></span>`;
+        }
+      }
 
-      const encodedText = encodeURIComponent(text);
-      const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedText}`;
+      if (formStatus) {
+        formStatus.style.display = 'none';
+      }
 
-      // Redirect user to WhatsApp
-      window.open(whatsappUrl, '_blank');
+      const recipientEmail = 'jvgb.es@gmail.com';
+      const payload = {
+        name: name,
+        phone: phone || (currentLang === 'pt' ? 'Não informado' : 'Not provided'),
+        email: email,
+        message: message,
+        _subject: `Novo Contato do Site: ${name} - Ornellas Ceotto Advocacia`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          // Success State
+          if (formStatus) {
+            formStatus.className = 'form-status-alert success';
+            formStatus.innerHTML = `
+              <svg class="form-status-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <div class="form-status-content">
+                <span class="form-status-title">${dict.success_title}</span>
+                <span class="form-status-desc">${dict.success_desc}</span>
+              </div>
+            `;
+            formStatus.style.display = 'flex';
+          }
+          contactForm.reset();
+        } else {
+          throw new Error('Server returned non-200');
+        }
+      } catch (err) {
+        console.error('Form submission error:', err);
+        if (formStatus) {
+          formStatus.className = 'form-status-alert error';
+          formStatus.innerHTML = `
+            <svg class="form-status-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+            <div class="form-status-content">
+              <span class="form-status-title">${dict.error_title}</span>
+              <span class="form-status-desc">${dict.error_desc}</span>
+            </div>
+          `;
+          formStatus.style.display = 'flex';
+        }
+      } finally {
+        // Restore Submit Button
+        if (formSubmitBtn) {
+          formSubmitBtn.disabled = false;
+          if (formSubmitText) formSubmitText.textContent = dict.submit;
+          const currentSpinner = document.getElementById('formSubmitIcon');
+          if (currentSpinner) {
+            currentSpinner.outerHTML = `
+              <svg id="formSubmitIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            `;
+          }
+        }
+      }
     });
   }
 });
