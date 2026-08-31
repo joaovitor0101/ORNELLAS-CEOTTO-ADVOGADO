@@ -5,15 +5,15 @@
 // Flag SVGs
 const FLAGS = {
   pt: `<svg class="flag-icon" viewBox="0 0 24 16" width="20" height="13.3" xmlns="http://www.w3.org/2000/svg">
-    <rect width="24" height="16" rx="2" fill="#009B3A"/>
+    <rect width="24" height="16" rx="4" fill="#009B3A"/>
     <polygon points="12,2 21.5,8 12,14 2.5,8" fill="#FEDF01"/>
     <circle cx="12" cy="8" r="3.7" fill="#002776"/>
     <path d="M8.8 8.8 C10.2 7.3 13.8 7.3 15.2 8.8" stroke="#FFFFFF" stroke-width="0.7" fill="none"/>
   </svg>`,
   en: `<svg class="flag-icon" viewBox="0 0 24 16" width="20" height="13.3" xmlns="http://www.w3.org/2000/svg">
-    <rect width="24" height="16" rx="2" fill="#B22234"/>
+    <rect width="24" height="16" rx="4" fill="#B22234"/>
     <path d="M0 2.46h24v2.46H0zm0 4.92h24v2.46H0zm0 4.92h24v1.24H0z" fill="#FFFFFF"/>
-    <rect width="10" height="8.6" rx="1.5" fill="#3C3B6E"/>
+    <rect width="10" height="8.6" rx="2" fill="#3C3B6E"/>
     <circle cx="2.2" cy="2" r="0.6" fill="#FFFFFF"/>
     <circle cx="5" cy="2" r="0.6" fill="#FFFFFF"/>
     <circle cx="7.8" cy="2" r="0.6" fill="#FFFFFF"/>
@@ -38,72 +38,91 @@ const translations = {
       home: "Início",
       about: "Sobre",
       services: "Serviços",
+      international: "Clientes Internacionais",
       contact: "Contato"
     },
     header: {
       contact_btn: "Fale Conosco"
     },
     hero: {
-      badge: "ADVOCACIA ESTRATÉGICA",
-      title: "Recuperação de Crédito, Execuções e Defesa Patrimonial<span class=\"dot\">.</span>",
-      subtitle: "Atuação técnica e estratégica para proteger seus direitos e recuperar o que é seu."
+      cta_headline: "INICIATIVA<span class=\"dot\">.</span> PROFICIÊNCIA<span class=\"dot\">.</span> PERSISTÊNCIA<span class=\"dot\">.</span>",
+      cta_subline: "ADVOCACIA ESTRATÉGICA &bull; RECUPERAÇÃO DE CRÉDITO &bull; DEFESA PATRIMONIAL",
+      scroll_explore: "Role para explorar a página"
     },
     about: {
       badge: "SOBRE NÓS",
-      title: "COMPROMISSO COM<br>EXCELÊNCIA E RESULTADOS",
-      p1: "<strong>ORNELLAS CEOTTO Sociedade Individual de Advocacia</strong> é um escritório especializado em Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial.",
-      p2: "Atuamos com foco em resultados, estratégia jurídica e atendimento personalizado para empresas e pessoas físicas que precisam proteger seus direitos e recuperar o que é seu.",
-      p3: "Com atuação técnica e estratégica em todo o Brasil, combinamos inteligência jurídica avançada, ferramentas forenses de localização de ativos e rigor processual para assegurar a máxima efetividade das medidas judiciais e extrajudiciais.",
-      pillar1: "Rigor Técnico & Processual",
-      pillar2: "Inteligência Investigativa",
-      pillar3: "Atuação Nacional Estratégica",
-      btn_expand: "Ler história completa",
-      btn_collapse: "Recolher texto",
+      title: "Iniciativa<span class=\"dot\">.</span><br>Proficiência<span class=\"dot\">.</span><br>Persistência<span class=\"dot\">.</span>",
+      seal1_label: "Rigor Técnico",
+      seal1_desc: "Processual e estratégico em todas as instâncias",
+      seal2_label: "Inteligência Forense",
+      seal2_desc: "Localização e rastreamento de ativos ocultos",
+      seal3_label: "Atuação Nacional",
+      seal3_desc: "Em todo o território brasileiro",
+      lead: "A <strong>Ornellas Ceotto Advocacia</strong> é um escritório brasileiro voltado ao atendimento de clientes nacionais e estrangeiros, com atuação concentrada em execuções, recuperação e rastreamento de ativos.",
+      intro_p2: "Atuamos na execução de obrigações decorrentes de contratos, títulos extrajudiciais e decisões judiciais e arbitrais, bem como na adoção de medidas destinadas à localização e recuperação de ativos.",
+      intro_p3: "Nossa atuação compreende, ainda, a prevenção, a identificação e o enfrentamento de fraudes patrimoniais e financeiras, no contexto de proteção do crédito e do interesse de seus titulares.",
+      intro_p4: "Com conhecimento consolidado do ramo corporativo, societário e de consumo, a Ornellas Ceotto atua na preservação do patrimônio de empresas, investidores e demais credores, em todo o território brasileiro.",
+      btn_expand: "Conheça nossa história e valores",
+      btn_collapse: "Recolher história",
+      hist_title: "Nossa História & Valores",
+      hist_p1: "A Ornellas Ceotto Advocacia foi fundada em 2026 pelo advogado Gabriel Ornellas Ceotto, com o propósito de oferecer uma atuação especializada em demandas de elevada complexidade processual relacionada a recuperação de ativos e demandas patrimoniais.",
+      hist_p2: "Desde sua origem, o escritório foi estruturado para atender clientes nacionais e estrangeiros, com atendimento completo em português e em inglês, oferecendo suporte jurídico a empresas, investidores e demais titulares de crédito que necessitem recuperar ativos ou fazer cumprir obrigações no território brasileiro.",
+      hist_full_continuous: "A Ornellas Ceotto parte da compreensão de que a recuperação de crédito moderna não se limita ao ajuizamento de uma ação ou à adoção isolada de medidas executivas. A efetividade exige análise patrimonial, investigação, conhecimento processual, definição de estratégia e acompanhamento persistente diante de estruturas societárias complexas, dispersão de ativos e práticas destinadas à ocultação patrimonial. Em um ambiente marcado por elevada inadimplência e pela crescente sofisticação de fraudes, acreditamos que a proteção do crédito desempenha papel relevante na preservação da segurança das relações econômicas. Por isso, o escritório busca oferecer uma atuação personalizada, tecnicamente qualificada e orientada à efetiva recuperação de ativos, observadas as particularidades de cada caso.",
+      values_intro: "Essa forma de atuação é sintetizada nos três valores que orientam o escritório: iniciativa, proficiência técnica e persistência.",
+      values_continuous: "A <strong>iniciativa</strong> é necessária e traduz nossa postura ativa diante da inadimplência e das dificuldades inerentes à recuperação de ativos. A <strong>proficiência</strong> decorre da necessidade de atualização constante do Direito, da jurisprudência e dos instrumentos e tecnologias disponíveis para a solução de cada caso. A <strong>persistência</strong>, por sua vez, é o que sustenta uma atuação contínua e determinada na busca pela efetiva recuperação do crédito.",
       cta: "Conheça nossas áreas de atuação"
     },
     services: {
-      badge: "NOSSAS ÁREAS DE ATUAÇÃO",
-      title: "SOLUÇÕES JURÍDICAS ESTRATÉGICAS",
-      subtitle: "Atuação personalizada com alta precisão técnica para empresas e pessoas físicas em todo o Brasil.",
-      btn_expand: "Conhecer atuação",
-      btn_collapse: "Recolher detalhes",
-      recuperacao: {
-        title: "RECUPERAÇÃO DE CRÉDITO",
-        desc: "Atuamos de forma estratégica para recuperar valores devidos com máxima celeridade e efetividade.",
-        detail_title: "Nossa Atuação Estratégica Inclui:",
-        item1: "Negociação extrajudicial e notificações notificatórias estratégicas.",
-        item2: "Cobrança judicial de títulos de crédito (Cheques, Duplicatas, Promissórias).",
-        item3: "Execução de Contratos e Títulos Executivos Extrajudiciais.",
-        item4: "Localização estratégica de devedores e mapeamento patrimonial.",
-        cta_hint: "Precisa recuperar ativos ou valores devidos à sua empresa?",
-        cta_btn: "Falar com especialista"
+      title: "NOSSAS ÁREAS DE ATUAÇÃO",
+      ativos: {
+        title: "RECUPERAÇÃO DE ATIVOS",
+        item1: "Execuções de obrigações de pagar, fazer, não fazer e entregar coisa",
+        item2: "Cumprimento de decisões judiciais e arbitrais",
+        item3: "Ações de cobrança e monitórias",
+        item4: "Direitos decorrentes de títulos de crédito e valores mobiliários",
+        item5: "Investigação patrimonial",
+        item6: "Rastreamento e localização de ativos",
+        item7: "Prevenção e repressão à fraude contra credores e à fraude à execução",
+        item8: "Medidas cautelares e constritivas",
+        item9: "Desconsideração da personalidade jurídica e responsabilização patrimonial"
       },
-      defesa: {
-        title: "DEFESA PATRIMONIAL",
-        desc: "Protegemos seu patrimônio pessoal e empresarial contra constrições indevidas e riscos sucessórios.",
-        detail_title: "Soluções e Medidas Protetivas:",
-        item1: "Estruturação preventiva e planejamento sucessório e patrimonial.",
-        item2: "Embargos à Execução e Embargos de Terceiro contra penhoras ilegítimas.",
-        item3: "Proteção de bem de família e ativos empresariais indispensáveis.",
-        item4: "Reestruturação preventiva de haveres e contratos societários.",
-        cta_hint: "Deseja proteger seus bens e ativos com segurança jurídica?",
-        cta_btn: "Falar com especialista"
+      empresarial: {
+        title: "ASSESSORIA EMPRESARIAL E GESTÃO DE RECEBÍVEIS",
+        item1: "Assessoria jurídica continuada para gestão e proteção de recebíveis",
+        item2: "Revisão e estruturação de contratos e instrumentos de crédito",
+        item3: "Estruturação e análise de garantias",
+        item4: "Fortalecimento da exequibilidade contratual",
+        item5: "Gestão jurídica de carteiras",
+        item6: "Cobrança extrajudicial e negociação de obrigações",
+        item7: "Análise jurídica e patrimonial de contrapartes",
+        item8: "Defesa em execuções e medidas constritivas",
+        item9: "Consultoria jurídica empresarial"
       },
-      investigacao: {
-        title: "INVESTIGAÇÃO PATRIMONIAL",
-        desc: "Investigamos minuciosamente bens, direitos e fraudes para viabilizar o recebimento de valores e instruir disputas.",
-        detail_title: "Tecnologia & Inteligência Investigativa:",
-        item1: "Pesquisa aprofundada de imóveis, veículos, embarcações e aeronaves.",
-        item2: "Identificação de grupos econômicos de fato, empresas de fachada e laranjas.",
-        item3: "Rastreamento de ativos no exterior e participações societárias ocultas.",
-        item4: "Produção de relatórios probatórios robustos para instrução de processos.",
-        cta_hint: "Precisa rastrear bens e localizar patrimônio oculto de devedores?",
-        cta_btn: "Falar com especialista"
+      contencioso: {
+        title: "CONTENCIOSO ESTRATÉGICO",
+        item1: "Disputas contratuais",
+        item2: "Responsabilidade civil e demandas indenizatórias",
+        item3: "Litígios empresariais e societários",
+        item4: "Controvérsias complexas envolvendo relações de consumo",
+        item5: "Tutelas de urgência e medidas cautelares",
+        item6: "Negociação e resolução estratégica de conflitos",
+        item7: "Outros litígios estratégicos"
       }
+    },
+    international: {
+      badge: "ATUAÇÃO GLOBAL & CROSS-BORDER",
+      title: "CLIENTES INTERNACIONAIS",
+      p1: "A Ornellas Ceotto oferece atendimento personalizado a clientes e escritórios de advocacia estrangeiros com interesses jurídicos no Brasil, especialmente em demandas relacionadas à recuperação e rastreamento de ativos.",
+      p2: "Com atendimento integral em inglês, buscamos oferecer ao cliente internacional um ponto de contato jurídico no país, com comunicação direta, acompanhamento próximo e compreensão das particularidades envolvidas em demandas transnacionais.",
+      p3: "Nossa proposta é proporcionar uma experiência jurídica personalizada, permitindo que empresas, investidores, credores e escritórios estrangeiros conduzam seus interesses no Brasil com clareza, segurança e proximidade, independentemente de onde estejam localizados.",
+      loc_taipei: "Taipei 101 - Taiwan",
+      loc_tokyo: "Prédios em Tokyo",
+      loc_newyork: "New York Downtown",
+      loc_frankfurt: "Frankfurt, Alemanha"
     },
     contact: {
       title: "SOLICITE UM ATENDIMENTO",
-      subtitle: "Preencha os campos abaixo para receber uma análise preliminar estratégica.",
+      subtitle: "Nos envie uma mensagem para que possamos conhecer a sua demanda",
       name_placeholder: "Nome completo",
       phone_placeholder: "Telefone",
       email_placeholder: "E-mail",
@@ -114,17 +133,17 @@ const translations = {
       success_desc: "Recebemos suas informações. Nossa equipe entrará em contato em breve.",
       error_title: "Erro ao enviar mensagem",
       error_desc: "Ocorreu um problema no envio. Por favor, tente novamente ou fale conosco pelo WhatsApp.",
-      direct_channels_title: "CONTATOS IMEDIATOS",
+      direct_channels_title: "FALE CONOSCO",
       direct_channels_subtitle: "Fale diretamente com nossa equipe jurídica:",
-      email_label: "E-mail Institucional",
-      instagram_label: "Instagram Oficial",
-      coverage_label: "Atuação Nacional",
-      coverage_sub: "Atendimento em todo o Brasil",
+      email_label: "E-MAIL INSTITUCIONAL",
+      whatsapp_label: "TELEFONE / WHATSAPP",
+      whatsapp_badge: "Atendimento Imediato",
       alert_missing: "Por favor, preencha todos os campos obrigatórios (Nome, E-mail e Mensagem)."
     },
     footer: {
-      brand_desc: "Especialistas em Recuperação de Crédito, Execuções, Defesa Patrimonial e Investigação Patrimonial. Atuação estratégica para proteger seus direitos e gerar resultados.",
-      copyright: "&copy; 2024 Ornellas Ceotto Sociedade Individual de Advocacia. Todos os direitos reservados.",
+      address: "Ocean Ville Corporate Center • Rua Henrique Moscoso, 90 • Praia da Costa, Vila Velha - ES, 29101-330, Sala 620",
+      social_title: "Conecte-se conosco",
+      copyright: "&copy; 2026 Ornellas Ceotto Sociedade Individual de Advocacia. Todos os direitos reservados.",
       privacy: "Política de Privacidade",
       terms: "Termos de Uso"
     }
@@ -138,72 +157,91 @@ const translations = {
       home: "Home",
       about: "About",
       services: "Services",
+      international: "International Clients",
       contact: "Contact"
     },
     header: {
       contact_btn: "Contact Us"
     },
     hero: {
-      badge: "STRATEGIC LEGAL ADVOCACY",
-      title: "Credit Recovery, Judicial Enforcement & Asset Defense<span class=\"dot\">.</span>",
-      subtitle: "Technical and strategic legal practice dedicated to protecting your rights and recovering what is yours."
+      cta_headline: "INITIATIVE<span class=\"dot\">.</span> PROFICIENCY<span class=\"dot\">.</span> PERSISTENCE<span class=\"dot\">.</span>",
+      cta_subline: "STRATEGIC ADVOCACY &bull; CREDIT RECOVERY &bull; ASSET PROTECTION",
+      scroll_explore: "Scroll to explore"
     },
     about: {
       badge: "ABOUT US",
-      title: "COMMITTED TO<br>EXCELLENCE AND RESULTS",
-      p1: "<strong>ORNELLAS CEOTTO Law Firm</strong> is a premier legal boutique specializing in Credit Recovery, Judicial Enforcement, Asset Protection, and Asset Tracing & Investigation.",
-      p2: "We operate with a relentless focus on high-impact results, strategic jurisprudence, and personalized counsel for corporations and individuals seeking to secure their assets and uphold their rights.",
-      p3: "Operating across all Brazilian jurisdictions, we combine advanced legal intelligence, forensic asset-tracing mechanisms, and procedural rigor to ensure maximum effectiveness in litigation and out-of-court settlements.",
-      pillar1: "Technical & Procedural Rigor",
-      pillar2: "Investigative Intelligence",
-      pillar3: "Strategic Nationwide Reach",
-      btn_expand: "Read full story",
+      title: "Initiative<span class=\"dot\">.</span><br>Proficiency<span class=\"dot\">.</span><br>Persistence<span class=\"dot\">.</span>",
+      seal1_label: "Technical Rigor",
+      seal1_desc: "Procedural and strategic precision across all courts",
+      seal2_label: "Forensic Intelligence",
+      seal2_desc: "Tracing and recovery of concealed assets",
+      seal3_label: "National Reach",
+      seal3_desc: "Legal practice throughout Brazil",
+      lead: "<strong>Ornellas Ceotto Advocacia</strong> is a Brazilian law firm dedicated to serving domestic and international clients, with a focus on enforcement proceedings, asset recovery, and asset tracing.",
+      intro_p2: "We handle the enforcement of obligations arising from contracts, extrajudicial instruments, and judicial or arbitral decisions, as well as the adoption of measures aimed at locating and recovering assets.",
+      intro_p3: "Our practice also encompasses the prevention, identification, and combating of patrimonial and financial fraud, within the context of protecting credit and the interests of creditors.",
+      intro_p4: "Drawing on consolidated expertise in corporate, commercial, and consumer law, Ornellas Ceotto focuses on preserving the assets of companies, investors, and other creditors throughout Brazil.",
+      btn_expand: "Discover our story and values",
       btn_collapse: "Show less",
+      hist_title: "Our Story & Values",
+      hist_p1: "Ornellas Ceotto Advocacia was founded in 2026 by attorney Gabriel Ornellas Ceotto, with the purpose of offering specialized legal practice in highly complex procedural matters related to asset recovery and patrimonial claims.",
+      hist_p2: "From its inception, the firm was structured to serve domestic and international clients, with full support in both Portuguese and English, providing legal assistance to companies, investors, and credit holders seeking to recover assets or enforce obligations in Brazil.",
+      hist_full_continuous: "Ornellas Ceotto operates from the understanding that modern credit recovery is not limited to filing a lawsuit or adopting isolated enforcement measures. Effectiveness requires patrimonial analysis, investigation, procedural expertise, strategic planning, and persistent action in the face of complex corporate structures, dispersed assets, and asset-concealment practices. In an environment marked by high default rates and increasingly sophisticated fraud, we believe that credit protection plays a relevant role in preserving the security of economic relationships. Therefore, the firm seeks to provide personalized, technically qualified legal practice oriented toward the effective recovery of assets, taking into account the particularities of each case.",
+      values_intro: "This approach is encapsulated in the three values that guide the firm: initiative, technical proficiency, and persistence.",
+      values_continuous: "<strong>Initiative</strong> is necessary and reflects our proactive stance in the face of default and the inherent difficulties of asset recovery. <strong>Proficiency</strong> stems from the constant need to stay current with the law, jurisprudence, and the tools and technologies available to resolve each case. <strong>Persistence</strong>, in turn, sustains a continuous and determined effort in pursuit of the effective recovery of credit.",
       cta: "Explore our practice areas"
     },
     services: {
-      badge: "OUR PRACTICE AREAS",
-      title: "STRATEGIC LEGAL SOLUTIONS",
-      subtitle: "Personalized advocacy with high technical precision for corporations and individuals nationwide.",
-      btn_expand: "View practice details",
-      btn_collapse: "Show less",
-      recuperacao: {
-        title: "CREDIT & DEBT RECOVERY",
-        desc: "Technical and strategic legal practice dedicated to recovering outstanding debts swiftly and efficiently.",
-        detail_title: "Our Strategic Scope Includes:",
-        item1: "Extrajudicial settlement negotiations and formal legal notifications.",
-        item2: "Judicial collection of credit instruments (checks, promissory notes, trade bills).",
-        item3: "Judicial enforcement of commercial contracts and debt titles.",
-        item4: "Strategic location of debtors and intelligence mapping of hidden wealth.",
-        cta_hint: "Need to recover outstanding debts or commercial receivables?",
-        cta_btn: "Speak with specialist"
+      title: "OUR PRACTICE AREAS",
+      ativos: {
+        title: "ASSET RECOVERY",
+        item1: "Enforcement of obligations to pay, perform, refrain, and deliver assets",
+        item2: "Enforcement of judicial and arbitral awards",
+        item3: "Collection actions and summary debt proceedings",
+        item4: "Rights arising from credit instruments and securities",
+        item5: "Forensic patrimonial investigation",
+        item6: "Tracing and location of hidden assets",
+        item7: "Prevention and repression of debtor fraud and fraudulent conveyances",
+        item8: "Injunctive and asset-attachment measures",
+        item9: "Piercing of the corporate veil and shareholder liability"
       },
-      defesa: {
-        title: "ASSET PROTECTION & WEALTH DEFENSE",
-        desc: "Safeguarding personal, corporate, and family assets against unlawful attachments and financial vulnerabilities.",
-        detail_title: "Protective Solutions & Mechanisms:",
-        item1: "Preventive corporate structuring, family estate planning, and succession governance.",
-        item2: "Enforcement Objections and Third-Party Claims against wrongful seizures.",
-        item3: "Protection of family homesteads and essential business assets.",
-        item4: "Preventive restructuring of corporate interests and commercial agreements.",
-        cta_hint: "Looking to protect your family and business assets with legal certainty?",
-        cta_btn: "Speak with specialist"
+      empresarial: {
+        title: "CORPORATE COUNSEL & RECEIVABLES MANAGEMENT",
+        item1: "Ongoing legal counsel for receivables management and protection",
+        item2: "Drafting and review of commercial contracts and credit instruments",
+        item3: "Structuring and legal analysis of collateral and guarantees",
+        item4: "Enhancing contract enforceability and execution strength",
+        item5: "Legal portfolio governance and credit management",
+        item6: "Out-of-court collection and debt renegotiation",
+        item7: "Legal and patrimonial due diligence on counterparties",
+        item8: "Defense in enforcement and asset attachment proceedings",
+        item9: "Corporate legal advisory"
       },
-      investigacao: {
-        title: "ASSET TRACING & INVESTIGATION",
-        desc: "Thorough forensic investigation into assets, rights, and fraudulent conveyances to empower litigation outcomes.",
-        detail_title: "Forensic Intelligence Capabilities:",
-        item1: "In-depth tracing of real estate holdings, luxury vehicles, maritime vessels, and aircraft.",
-        item2: "Identification of de facto economic conglomerates, nominee intermediaries, and shell entities.",
-        item3: "Cross-border asset discovery and undisclosed equity interests.",
-        item4: "Compilation of evidentiary audit reports for judicial submission.",
-        cta_hint: "Need to trace hidden assets and pierce fraudulent corporate veils?",
-        cta_btn: "Speak with specialist"
+      contencioso: {
+        title: "STRATEGIC LITIGATION",
+        item1: "Commercial and contractual disputes",
+        item2: "Civil liability and indemnification claims",
+        item3: "Corporate, partnership, and shareholder disputes",
+        item4: "Complex disputes involving consumer relations",
+        item5: "Urgent injunctive relief and provisional remedies",
+        item6: "Strategic conflict negotiation and alternative dispute resolution",
+        item7: "Other high-stakes strategic litigation"
       }
+    },
+    international: {
+      badge: "CROSS-BORDER LEGAL PRACTICE",
+      title: "INTERNATIONAL CLIENTS",
+      p1: "Ornellas Ceotto provides tailored legal counsel to foreign clients and international law firms with legal interests in Brazil, specifically in complex matters related to asset recovery and cross-border asset tracing.",
+      p2: "With full proficiency in English, we provide international clients with a reliable local legal bridge in Brazil, ensuring direct communication, close case monitoring, and a deep understanding of the unique nuances involved in transnational disputes.",
+      p3: "Our mission is to deliver a bespoke legal experience, allowing multinational corporations, investors, creditors, and foreign law firms to navigate their interests in Brazil with total clarity, security, and proximity, regardless of where they are located.",
+      loc_taipei: "Taipei 101 - Taiwan",
+      loc_tokyo: "Buildings in Tokyo",
+      loc_newyork: "New York Downtown",
+      loc_frankfurt: "Frankfurt, Germany"
     },
     contact: {
       title: "REQUEST A CONSULTATION",
-      subtitle: "Fill in the fields below to receive a strategic preliminary case review.",
+      subtitle: "Send us a message so we can understand your legal needs",
       name_placeholder: "Full name",
       phone_placeholder: "Phone number",
       email_placeholder: "Email address",
@@ -214,17 +252,17 @@ const translations = {
       success_desc: "We received your information. Our legal team will reach out to you shortly.",
       error_title: "Error sending message",
       error_desc: "An issue occurred while sending. Please try again or reach out via WhatsApp.",
-      direct_channels_title: "DIRECT CHANNELS",
+      direct_channels_title: "GET IN TOUCH",
       direct_channels_subtitle: "Connect directly with our legal team:",
-      email_label: "Institutional Email",
-      instagram_label: "Official Instagram",
-      coverage_label: "National Practice",
-      coverage_sub: "Legal services throughout Brazil",
+      email_label: "INSTITUTIONAL EMAIL",
+      whatsapp_label: "PHONE / WHATSAPP",
+      whatsapp_badge: "Immediate Response",
       alert_missing: "Please fill in all required fields (Name, Email, and Message)."
     },
     footer: {
-      brand_desc: "Specialists in Credit Recovery, Judicial Enforcement, Asset Protection, and Asset Tracing. Strategic legal counsel to protect your rights and deliver real results.",
-      copyright: "&copy; 2024 Ornellas Ceotto Law Firm. All rights reserved.",
+      address: "Ocean Ville Corporate Center • Rua Henrique Moscoso, 90 • Praia da Costa, Vila Velha - ES, 29101-330, Suite 620",
+      social_title: "Connect with us",
+      copyright: "&copy; 2026 Ornellas Ceotto Law Firm. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms of Use"
     },
@@ -438,17 +476,7 @@ function applyLanguage(lang, smooth = true) {
       aboutExpandBtnText.textContent = isExpanded ? dict.btn_collapse : dict.btn_expand;
     }
 
-    // 9. Update Service Expandable Cards Toggle Button Texts
-    document.querySelectorAll('.service-expandable-card').forEach(card => {
-      const toggleText = card.querySelector('.service-toggle-text');
-      const toggleBtn = card.querySelector('.btn-service-toggle');
-      if (toggleText) {
-        const dict = translations[lang] ? translations[lang].services : translations.pt.services;
-        const isExpanded = card.classList.contains('expanded');
-        toggleText.textContent = isExpanded ? dict.btn_collapse : dict.btn_expand;
-        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', isExpanded);
-      }
-    });
+
 
     if (smooth) {
       setTimeout(() => {
@@ -477,10 +505,23 @@ document.addEventListener('DOMContentLoaded', () => {
       if (aboutExpandBtnText) {
         aboutExpandBtnText.textContent = isExpanded ? dict.btn_collapse : dict.btn_expand;
       }
-      if (aboutExpandBtnIcon) {
-        aboutExpandBtnIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
-      }
     });
+
+    const aboutBottomExpandBtn = document.getElementById('aboutBottomExpandBtn');
+    if (aboutBottomExpandBtn) {
+      aboutBottomExpandBtn.addEventListener('click', () => {
+        aboutExpandableBox.classList.remove('expanded');
+        aboutExpandBtn.setAttribute('aria-expanded', 'false');
+        const dict = translations[currentLang] ? translations[currentLang].about : translations.pt.about;
+        if (aboutExpandBtnText) {
+          aboutExpandBtnText.textContent = dict.btn_expand;
+        }
+        const sobreSection = document.getElementById('sobre');
+        if (sobreSection) {
+          sobreSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
   }
 
   // 3. Language Switcher Dropdown Toggle Logic
@@ -681,7 +722,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // 6. Services are now permanently open vertical boxes (no accordion needed)
+  // 6. International Clients Image Carousel (3s Auto-advance with Location Captions)
+  const intlCarousel = document.getElementById('intlCarousel');
+  if (intlCarousel) {
+    const slides = intlCarousel.querySelectorAll('.intl-slide');
+    const dots = intlCarousel.querySelectorAll('.intl-dot');
+    let currentSlide = 0;
+    let carouselInterval = null;
+
+    const showSlide = (index) => {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+      currentSlide = index;
+    };
+
+    const nextSlide = () => {
+      const nextIndex = (currentSlide + 1) % slides.length;
+      showSlide(nextIndex);
+    };
+
+    const startCarousel = () => {
+      if (carouselInterval) clearInterval(carouselInterval);
+      carouselInterval = setInterval(nextSlide, 3000);
+    };
+
+    const stopCarousel = () => {
+      if (carouselInterval) clearInterval(carouselInterval);
+    };
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'), 10);
+        showSlide(index);
+        startCarousel();
+      });
+    });
+
+    intlCarousel.addEventListener('mouseenter', stopCarousel);
+    intlCarousel.addEventListener('mouseleave', startCarousel);
+
+    startCarousel();
+  }
 
   // 7. Contact Form submission logic -> Sends via FormSubmit AJAX to email with visual feedback
   const contactForm = document.getElementById('contactForm');
