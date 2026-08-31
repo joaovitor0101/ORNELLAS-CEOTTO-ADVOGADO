@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ornellasceotto.com.br/sitemap.xml
