@@ -144,8 +144,8 @@ const translations = {
       address: "Ocean Ville Corporate Center • Rua Henrique Moscoso, 90 • Praia da Costa, Vila Velha - ES, 29101-330, Sala 620",
       social_title: "Conecte-se conosco",
       copyright: "&copy; 2026 Ornellas Ceotto Sociedade Individual de Advocacia. Todos os direitos reservados.",
-      privacy: "Política de Privacidade",
-      terms: "Termos de Uso"
+      privacy: "Política de Privacidade & LGPD",
+      terms: "Cookies & Termos"
     }
   },
   en: {
@@ -177,63 +177,63 @@ const translations = {
       seal2_desc: "Tracing and recovery of concealed assets",
       seal3_label: "National Reach",
       seal3_desc: "Legal practice throughout Brazil",
-      lead: "<strong>Ornellas Ceotto Advocacia</strong> is a Brazilian law firm dedicated to serving domestic and international clients, with a focus on enforcement proceedings, asset recovery, and asset tracing.",
-      intro_p2: "We handle the enforcement of obligations arising from contracts, extrajudicial instruments, and judicial or arbitral decisions, as well as the adoption of measures aimed at locating and recovering assets.",
-      intro_p3: "Our practice also encompasses the prevention, identification, and combating of patrimonial and financial fraud, within the context of protecting credit and the interests of creditors.",
-      intro_p4: "Drawing on consolidated expertise in corporate, commercial, and consumer law, Ornellas Ceotto focuses on preserving the assets of companies, investors, and other creditors throughout Brazil.",
-      btn_expand: "Discover our story and values",
+      lead: "<strong>Ornellas Ceotto</strong> is a Brazilian law firm focused on enforcement, asset recovery and asset tracing for Brazilian and international clients.",
+      intro_p2: "We help clients enforce contracts, enforceable instruments, court judgments and arbitral awards, while pursuing the legal measures needed to locate and recover assets throughout Brazil.",
+      intro_p3: "Our work also includes identifying and responding to asset concealment, fraudulent transfers and financial fraud, with a focus on protecting creditor rights and preserving value.",
+      intro_p4: "With a strong background in corporate, business and consumer matters, Ornellas Ceotto represents companies, investors and other creditors in complex disputes and recovery efforts across Brazil.",
+      btn_expand: "Our Story & Values",
       btn_collapse: "Show less",
       hist_title: "Our Story & Values",
-      hist_p1: "Ornellas Ceotto Advocacia was founded in 2026 by attorney Gabriel Ornellas Ceotto, with the purpose of offering specialized legal practice in highly complex procedural matters related to asset recovery and patrimonial claims.",
-      hist_p2: "From its inception, the firm was structured to serve domestic and international clients, with full support in both Portuguese and English, providing legal assistance to companies, investors, and credit holders seeking to recover assets or enforce obligations in Brazil.",
-      hist_full_continuous: "Ornellas Ceotto operates from the understanding that modern credit recovery is not limited to filing a lawsuit or adopting isolated enforcement measures. Effectiveness requires patrimonial analysis, investigation, procedural expertise, strategic planning, and persistent action in the face of complex corporate structures, dispersed assets, and asset-concealment practices. In an environment marked by high default rates and increasingly sophisticated fraud, we believe that credit protection plays a relevant role in preserving the security of economic relationships. Therefore, the firm seeks to provide personalized, technically qualified legal practice oriented toward the effective recovery of assets, taking into account the particularities of each case.",
-      values_intro: "This approach is encapsulated in the three values that guide the firm: initiative, technical proficiency, and persistence.",
-      values_continuous: "<strong>Initiative</strong> is necessary and reflects our proactive stance in the face of default and the inherent difficulties of asset recovery. <strong>Proficiency</strong> stems from the constant need to stay current with the law, jurisprudence, and the tools and technologies available to resolve each case. <strong>Persistence</strong>, in turn, sustains a continuous and determined effort in pursuit of the effective recovery of credit.",
+      hist_p1: "Ornellas Ceotto was founded in 2026 by Brazilian attorney Gabriel Ornellas Ceotto to handle complex enforcement and asset recovery matters in Brazil.",
+      hist_p2: "From day one, the firm was built to serve both Brazilian and international clients. We work in Portuguese and English and represent companies, investors and creditors that need to locate assets, enforce obligations or pursue recovery in Brazil.",
+      hist_full_continuous: "Asset recovery rarely ends with filing a lawsuit. Difficult cases may involve complex corporate structures, dispersed assets, fraudulent transfers, asset concealment and multiple enforcement measures. Our role is to understand the asset picture and identify the right legal tools to keep the matter moving. When default or fraud puts recovery at risk, effective enforcement matters the most. That is why we combine close client communication, rigorous legal analysis and a practical focus on recovery, always adapting the strategy to the circumstances of each matter.",
+      values_intro: "Our work is guided by three core values: Initiative. Technical Proficiency. Persistence.",
+      values_continuous: "<strong>Initiative</strong> means acting early and decisively when a claim or asset is at risk. <strong>Technical Proficiency</strong> means staying current with the law, case law and investigative tools and technologies that may affect the outcome of a case. <strong>Persistence</strong> means continuing to pursue viable recovery paths specially when the obvious fail.",
       cta: "Explore our practice areas"
     },
     services: {
       title: "OUR PRACTICE AREAS",
       ativos: {
         title: "ASSET RECOVERY",
-        item1: "Enforcement of obligations to pay, perform, refrain, and deliver assets",
-        item2: "Enforcement of judicial and arbitral awards",
-        item3: "Collection actions and summary debt proceedings",
-        item4: "Rights arising from credit instruments and securities",
-        item5: "Forensic patrimonial investigation",
-        item6: "Tracing and location of hidden assets",
-        item7: "Prevention and repression of debtor fraud and fraudulent conveyances",
-        item8: "Injunctive and asset-attachment measures",
-        item9: "Piercing of the corporate veil and shareholder liability"
+        item1: "Enforcement of Monetary and Non-Monetary Obligations",
+        item2: "Judgment and Arbitral Award Enforcement",
+        item3: "Debt Collection and Payment Claims",
+        item4: "Enforcement of Rights under Negotiable Instruments and Securities",
+        item5: "Asset Investigations",
+        item6: "Asset Tracing and Recovery",
+        item7: "Fraudulent Transfers and Creditor Protection",
+        item8: "Interim, Freezing and Attachment Measures",
+        item9: "Piercing the Corporate Veil and Related Liability Claims"
       },
       empresarial: {
-        title: "CORPORATE COUNSEL & RECEIVABLES MANAGEMENT",
-        item1: "Ongoing legal counsel for receivables management and protection",
-        item2: "Drafting and review of commercial contracts and credit instruments",
-        item3: "Structuring and legal analysis of collateral and guarantees",
+        title: "BUSINESS ADVISORY & RECEIVABLES MANAGEMENT",
+        item1: "Ongoing Legal Counsel for Receivables Management and Protection",
+        item2: "Contract and Credit Documentation Review & Structuring",
+        item3: "Collateral and Guarantee Structuring",
         item4: "Enhancing contract enforceability and execution strength",
         item5: "Legal portfolio governance and credit management",
-        item6: "Out-of-court collection and debt renegotiation",
-        item7: "Legal and patrimonial due diligence on counterparties",
-        item8: "Defense in enforcement and asset attachment proceedings",
-        item9: "Corporate legal advisory"
+        item6: "Out-of-Court Collections and Debt Negotiations",
+        item7: "Counterparty Legal and Asset Due Diligence",
+        item8: "Defense in Enforcement and Attachment Proceedings",
+        item9: "General Business Legal Advisory"
       },
       contencioso: {
-        title: "STRATEGIC LITIGATION",
-        item1: "Commercial and contractual disputes",
-        item2: "Civil liability and indemnification claims",
-        item3: "Corporate, partnership, and shareholder disputes",
-        item4: "Complex disputes involving consumer relations",
-        item5: "Urgent injunctive relief and provisional remedies",
-        item6: "Strategic conflict negotiation and alternative dispute resolution",
-        item7: "Other high-stakes strategic litigation"
+        title: "COMPLEX LITIGATION & DISPUTE RESOLUTION",
+        item1: "Contract Disputes",
+        item2: "Tort and Damages Claims",
+        item3: "Business and Corporate Disputes",
+        item4: "Complex Consumer Disputes",
+        item5: "Interim and Injunctive Relief",
+        item6: "Settlement Negotiations and Dispute Resolution",
+        item7: "Other Complex and High-Stakes Disputes"
       }
     },
     international: {
       badge: "CROSS-BORDER LEGAL PRACTICE",
       title: "INTERNATIONAL CLIENTS",
-      p1: "Ornellas Ceotto provides tailored legal counsel to foreign clients and international law firms with legal interests in Brazil, specifically in complex matters related to asset recovery and cross-border asset tracing.",
-      p2: "With full proficiency in English, we provide international clients with a reliable local legal bridge in Brazil, ensuring direct communication, close case monitoring, and a deep understanding of the unique nuances involved in transnational disputes.",
-      p3: "Our mission is to deliver a bespoke legal experience, allowing multinational corporations, investors, creditors, and foreign law firms to navigate their interests in Brazil with total clarity, security, and proximity, regardless of where they are located.",
+      p1: "<strong>Ornellas Ceotto</strong> represents international clients and foreign law firms in Brazil, with a particular focus on asset recovery, asset tracing and enforcement matters.",
+      p2: "We provide English-language legal support and act as a direct point of contact for matters in Brazil, combining clear communication, close case management and practical guidance on Brazilian law and procedure.",
+      p3: "Our approach is hands-on and tailored to each matter. We help companies, investors, creditors and foreign counsel navigate Brazilian legal proceedings with clarity and confidence, wherever they are based.",
       loc_taipei: "Taipei 101 - Taiwan",
       loc_tokyo: "Buildings in Tokyo",
       loc_newyork: "New York Downtown",
@@ -263,8 +263,8 @@ const translations = {
       address: "Ocean Ville Corporate Center • Rua Henrique Moscoso, 90 • Praia da Costa, Vila Velha - ES, 29101-330, Suite 620",
       social_title: "Connect with us",
       copyright: "&copy; 2026 Ornellas Ceotto Law Firm. All rights reserved.",
-      privacy: "Privacy Policy",
-      terms: "Terms of Use"
+      privacy: "Privacy Policy & LGPD",
+      terms: "Cookies & Terms"
     },
     modal: {
       whatsapp_btn: "Speak with a Specialist on WhatsApp"
@@ -893,5 +893,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+  }
+
+  // 8. Cookie Consent Banner (LGPD Compliant)
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieAcceptBtn = document.getElementById('cookieAcceptBtn');
+  const cookieEssentialBtn = document.getElementById('cookieEssentialBtn');
+
+  if (cookieBanner) {
+    const consent = localStorage.getItem('ornellas_cookie_consent');
+    if (!consent) {
+      setTimeout(() => {
+        cookieBanner.classList.add('visible');
+      }, 700);
+    }
+
+    const dismissCookieBanner = (type) => {
+      localStorage.setItem('ornellas_cookie_consent', type);
+      cookieBanner.classList.remove('visible');
+    };
+
+    if (cookieAcceptBtn) {
+      cookieAcceptBtn.addEventListener('click', () => dismissCookieBanner('all'));
+    }
+    if (cookieEssentialBtn) {
+      cookieEssentialBtn.addEventListener('click', () => dismissCookieBanner('essential'));
+    }
   }
 });
