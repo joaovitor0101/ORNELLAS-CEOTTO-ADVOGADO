@@ -42,7 +42,8 @@ const translations = {
       contact: "Contato"
     },
     header: {
-      contact_btn: "Fale Conosco"
+      contact_btn: "Fale Conosco",
+      lang_label: "Idioma / Language:"
     },
     hero: {
       cta_headline: "INICIATIVA<span class=\"dot\">.</span> PROFICIÊNCIA<span class=\"dot\">.</span> PERSISTÊNCIA<span class=\"dot\">.</span>",
@@ -161,7 +162,8 @@ const translations = {
       contact: "Contact"
     },
     header: {
-      contact_btn: "Contact Us"
+      contact_btn: "Contact Us",
+      lang_label: "Language / Idioma:"
     },
     hero: {
       cta_headline: "INITIATIVE<span class=\"dot\">.</span> PROFICIENCY<span class=\"dot\">.</span> PERSISTENCE<span class=\"dot\">.</span>",
@@ -457,14 +459,15 @@ function applyLanguage(lang, smooth = true) {
       }
     });
 
-    // 6. Update WhatsApp Header Link message
+    // 6. Update WhatsApp Header and Mobile Link messages
     const headerContactBtn = document.getElementById('headerContactBtn');
-    if (headerContactBtn) {
-      const waText = lang === 'pt' 
-        ? "Olá! Gostaria de falar com um advogado especialista."
-        : "Hello! I would like to speak with a specialized attorney.";
-      headerContactBtn.href = `https://wa.me/5527999579004?text=${encodeURIComponent(waText)}`;
-    }
+    const mobileContactBtn = document.getElementById('mobileContactBtn');
+    const waText = lang === 'pt' 
+      ? "Olá! Gostaria de falar com um advogado especialista."
+      : "Hello! I would like to speak with a specialized attorney.";
+    const waHref = `https://wa.me/5527999579004?text=${encodeURIComponent(waText)}`;
+    if (headerContactBtn) headerContactBtn.href = waHref;
+    if (mobileContactBtn) mobileContactBtn.href = waHref;
 
     // 7. Update Open Modal if any
     // 8. Update About Expand Button Text if exists

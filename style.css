@@ -531,22 +531,28 @@ body.lang-fading [data-i18n-placeholder] {
   opacity: 0.35;
 }
 
+.nav-mobile-extras {
+  display: none;
+}
+
 .mobile-menu-btn {
   display: none;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
+  border-radius: 4px;
   width: 38px;
   height: 38px;
-  padding: 8px 7px;
+  padding: 0;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   transition: all 0.2s ease;
   flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .mobile-menu-btn:hover {
@@ -555,9 +561,9 @@ body.lang-fading [data-i18n-placeholder] {
 }
 
 .mobile-menu-btn.open {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--color-champagne);
-  box-shadow: 0 0 0 2px rgba(197, 168, 128, 0.2);
+  background: rgba(203, 32, 63, 0.2);
+  border-color: var(--color-red-primary);
+  box-shadow: 0 0 0 2px rgba(203, 32, 63, 0.25);
 }
 
 .hamburger-bar {
@@ -2124,12 +2130,50 @@ body.lang-fading [data-i18n-placeholder] {
 
 /* 3. Tablets in Landscape & Portrait (769px - 991px) */
 @media (max-width: 991px) {
+  .site-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
   .navbar {
-    height: 72px;
+    height: 74px;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .site-header.scrolled .navbar {
+    height: 68px;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand-logo img {
+    height: 44px;
+    max-height: 44px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+  }
+
+  .header-actions {
+    display: none !important;
   }
 
   .mobile-menu-btn {
     display: flex;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 4px;
+  }
+
+  .hamburger-bar {
+    width: 18px;
+    height: 2px;
   }
 
   .nav-links {
@@ -2139,13 +2183,13 @@ body.lang-fading [data-i18n-placeholder] {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(9, 13, 20, 0.96);
+    background: rgba(7, 12, 20, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     padding: 1.25rem 1.75rem 1.75rem;
     gap: 0.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(203, 32, 63, 0.35);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
@@ -2167,7 +2211,7 @@ body.lang-fading [data-i18n-placeholder] {
   .nav-link {
     display: block;
     padding: 0.85rem 0.5rem;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 600;
     color: #FFFFFF;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -2182,6 +2226,88 @@ body.lang-fading [data-i18n-placeholder] {
 
   .nav-link::after {
     display: none;
+  }
+
+  .nav-mobile-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    padding-top: 1.25rem;
+    margin-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-mobile-lang-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .nav-mobile-lang-label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #94A3B8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-mobile-lang-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .lang-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #CBD5E1;
+    font-weight: 600;
+    font-size: 0.86rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .lang-pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+  }
+
+  .lang-pill.active {
+    background: rgba(203, 32, 63, 0.25);
+    border-color: var(--color-red-primary);
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(203, 32, 63, 0.3);
+  }
+
+  .btn-wine-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background: var(--color-red-primary);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(203, 32, 63, 0.4);
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-wine-mobile:hover {
+    background: var(--color-red-bright);
+    transform: translateY(-1px);
   }
 
   .hero-title {
@@ -2228,48 +2354,118 @@ body.lang-fading [data-i18n-placeholder] {
 
 /* 4. Tablets in Portrait & Large Mobile (577px - 768px) */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .site-header {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .navbar {
-    height: 66px;
+    height: 70px;
+    gap: 0.5rem;
   }
 
   .site-header.scrolled .navbar {
-    height: 62px;
+    height: 64px;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: 0;
   }
 
   .brand-logo img {
-    height: 36px;
+    height: 42px;
+    max-height: 42px;
+    width: auto;
+    max-width: 200px;
   }
 
   .header-actions {
-    gap: 0.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
 
   .btn-wine-header {
     height: 36px;
-    padding: 0 0.85rem;
-    font-size: 0.8rem;
-    gap: 0.4rem;
+    width: 36px;
+    min-width: 36px;
+    padding: 0;
+    border-radius: 4px;
+    background: rgba(203, 32, 63, 0.22);
+    border: 1px solid rgba(203, 32, 63, 0.45);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-wine-header span {
+    display: none;
   }
 
   .btn-wine-header svg {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    color: #FFFFFF;
   }
 
   .lang-btn {
     height: 36px;
-    padding: 0 0.6rem;
-    font-size: 0.8rem;
+    padding: 0 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 700;
     gap: 0.35rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .lang-flag {
+    display: flex;
+    align-items: center;
   }
 
   .lang-dropdown {
-    right: -10px;
-    min-width: 155px;
+    right: 0;
+    min-width: 150px;
+  }
+
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hamburger-bar {
+    width: 16px;
+    height: 2px;
+  }
+
+  .nav-links {
+    padding: 1rem 1.25rem 1.5rem;
+    background: rgba(7, 12, 20, 0.98);
+    border-bottom: 1px solid rgba(203, 32, 63, 0.3);
+  }
+
+  .nav-link {
+    font-size: 0.96rem;
+    padding: 0.85rem 0.35rem;
   }
 
   .hero-section {
@@ -2281,84 +2477,107 @@ body.lang-fading [data-i18n-placeholder] {
   }
 
   .hero-center-box {
-    padding: 1.75rem 1.25rem;
-    width: 92%;
+    padding: 1.4rem 1.15rem;
+    width: 94%;
+    max-width: 480px;
+    border-radius: 4px;
   }
 
   .hero-cta-headline {
-    font-size: 1.2rem;
-    letter-spacing: 0.06em;
+    font-size: 1.18rem;
+    letter-spacing: 0.04em;
+    line-height: 1.55;
     white-space: normal;
   }
 
   .hero-scroll-explore {
-    bottom: 1.5rem;
+    bottom: 1.25rem;
   }
 
   .about-section {
-    padding: 70px 0 60px;
+    padding: 60px 0 50px;
   }
 
   .about-lead-single {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     line-height: 1.65;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text-justified {
+    font-size: 0.96rem;
+    line-height: 1.75;
+    text-align: left;
+    text-justify: none;
   }
 
   .btn-about-expand-prominent {
-    padding: 0.85rem 1.6rem;
-    font-size: 0.88rem;
-  }
-
-  .hero-trust-bar {
-    flex-direction: column;
-    gap: 0.85rem;
-    padding-top: 1.5rem;
-    align-items: flex-start;
-  }
-
-  .hero-trust-item {
-    border-right: none;
-    margin-right: 0;
-    padding-right: 0;
-  }
-
-  .about-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.86rem;
+    border-radius: 4px;
   }
 
   .services-section {
-    padding: 75px 0 85px;
+    padding: 65px 0 75px;
   }
 
-  .services-section .section-title.dark-text {
-    font-size: 1.75rem;
+  .services-section-title {
+    font-size: 1.6rem;
   }
 
   .services-grid-cards {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 2.5rem auto 0;
-    gap: 1.5rem;
+    max-width: 100%;
+    margin: 2rem auto 0;
+    gap: 1.35rem;
   }
 
-  .service-vcard-title,
-  .service-vcard-teaser {
-    min-height: auto;
+  .service-vertical-card {
+    padding: 1.75rem 1.35rem;
+    border-radius: 4px;
   }
 
-  .faq-contact-section {
-    padding: 80px 0 90px;
+  .service-vcard-title {
+    font-size: 1.2rem;
+  }
+
+  .service-vcard-list li {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .international-section {
+    padding: 65px 0 75px;
+  }
+
+  .international-lead-text {
+    font-size: 1.12rem;
+    line-height: 1.65;
+  }
+
+  .international-body-text {
+    font-size: 0.96rem;
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .international-carousel {
+    height: 380px;
+    max-width: 100%;
+    margin: 1.5rem auto 0;
+    border-radius: 4px;
+  }
+
+  .contact-section-dark {
+    padding: 65px 0 75px;
   }
 
   .contact-title {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
 
   .contact-form-column {
-    padding: 2rem 1.5rem;
+    padding: 1.65rem 1.25rem;
   }
 
   .contact-form-dark .form-row {
@@ -2369,187 +2588,19 @@ body.lang-fading [data-i18n-placeholder] {
   .form-input-dark,
   .form-textarea-dark {
     font-size: 16px !important;
-    padding: 0.95rem 1.1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 4px;
   }
 
-  .footer-brand-lockup {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .footer-v-divider {
-    display: none;
-  }
-
-  .footer-brand-desc {
-    font-size: 0.825rem;
-    max-width: 100%;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 0.85rem;
-    text-align: center;
-    padding-top: 16px;
-  }
-
-  .footer-bottom-links {
-    justify-content: center;
-  }
-
-  .whatsapp-float {
-    width: 54px;
-    height: 54px;
-    bottom: max(18px, env(safe-area-inset-bottom, 18px));
-    right: max(18px, env(safe-area-inset-right, 18px));
-  }
-}
-
-/* 5. Mobile Devices Standard & Landscape (481px - 576px) */
-@media (max-width: 576px) {
-  .container {
-    padding: 0 1.15rem;
-  }
-
-  .navbar {
-    height: 62px;
-  }
-
-  .site-header.scrolled .navbar {
-    height: 60px;
-  }
-
-  .brand-logo img {
-    height: 33px;
-  }
-
-  .header-actions {
-    gap: 0.35rem;
-  }
-
-  .btn-wine-header {
-    height: 35px;
-    padding: 0 0.7rem;
-    font-size: 0.76rem;
-    gap: 0.35rem;
-  }
-
-  .lang-btn {
-    height: 35px;
-    padding: 0 0.5rem;
-    font-size: 0.76rem;
-    gap: 0.3rem;
-  }
-
-  .mobile-menu-btn {
-    width: 36px;
-    height: 36px;
-  }
-
-  .lang-dropdown {
-    right: -8px;
-    min-width: 145px;
-  }
-
-  .hero-section {
-    height: 100vh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding-top: 65px;
-    padding-bottom: 65px;
-  }
-
-  .hero-center-box {
-    padding: 1.85rem 1.15rem;
-    width: 94%;
-  }
-
-  .hero-cta-headline {
-    font-size: 1.45rem;
-    letter-spacing: 0.06em;
-    line-height: 1.3;
-  }
-
-  .hero-cta-subline {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-  }
-
-  .hero-scroll-explore {
-    bottom: 1.25rem;
-  }
-
-  .about-section {
-    padding: 60px 0;
-  }
-
-  .about-content .section-title {
-    font-size: 1.7rem;
-  }
-
-  .services-section {
-    padding: 65px 0 75px;
-  }
-
-  .services-section .section-title.dark-text {
-    font-size: 1.5rem;
-  }
-
-  .services-section .section-subtitle {
-    font-size: 0.88rem;
-  }
-
-  .service-card-box {
-    padding: 1.35rem 1rem;
-  }
-
-  .service-card-top {
-    padding-bottom: 1rem;
-  }
-
-  .service-card-identity {
-    gap: 0.85rem;
-  }
-
-  .service-ordinal {
-    font-size: 1.15rem;
-  }
-
-  .service-card-title {
-    font-size: 1.1rem;
-  }
-
-  .service-card-teaser {
-    font-size: 0.85rem;
-  }
-
-  .service-card-body {
-    padding-top: 1rem;
-  }
-
-  .service-features-list li {
-    font-size: 0.85rem;
-  }
-
-  .faq-contact-section {
-    padding: 65px 0 75px;
-  }
-
-  .contact-form-column {
-    padding: 1.65rem 1.15rem;
-  }
-
-  .contact-title {
-    font-size: 1.45rem;
-  }
-
-  .contact-subtitle {
-    font-size: 0.85rem;
+  .btn-contact-submit {
+    height: 48px;
+    font-size: 0.9rem;
+    border-radius: 4px;
   }
 
   .contact-info-card {
     padding: 0.85rem 1rem;
+    border-radius: 4px;
     gap: 0.85rem;
   }
 
@@ -2575,75 +2626,202 @@ body.lang-fading [data-i18n-placeholder] {
     white-space: normal;
   }
 
+  .footer-brand-lockup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* 5. Mobile Devices in Landscape & Standard Mobile (481px - 576px) */
+@media (max-width: 576px) {
+  .services-section-title,
+  .international-section .section-title,
+  .contact-title {
+    font-size: 1.45rem;
+  }
+
+  .about-doc-box {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .contact-form-column {
+    padding: 1.4rem 1rem;
+  }
+
+  .contact-info-card {
+    padding: 0.85rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .contact-card-value.email-value {
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  .container {
+    padding: 0 0.85rem;
+  }
+
+  .navbar {
+    height: 66px;
+    gap: 0.35rem;
+  }
+
+  .site-header.scrolled .navbar {
+    height: 60px;
+  }
+
+  .brand-logo img {
+    height: 38px;
+    max-height: 38px;
+    max-width: 180px;
+  }
+
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .hero-cta-headline {
+    font-size: 1.12rem;
+    letter-spacing: 0.03em;
+  }
+
   .modal-container {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.15rem;
   }
 }
 
 /* 6. Small Mobile Devices (361px - 480px) */
 @media (max-width: 480px) {
-  .btn-wine-header span {
-    display: none;
-  }
-
-  .btn-wine-header {
-    padding: 0 0.65rem;
-    border-radius: 8px;
-    width: 36px;
-    justify-content: center;
-  }
-
-  .btn-wine-header svg {
-    margin: 0;
-  }
-
-  .lang-code {
-    font-size: 0.75rem;
-  }
-
-  .lang-btn {
-    padding: 0 0.45rem;
-  }
-
-  .hero-cta-headline {
-    font-size: 1.25rem;
-    letter-spacing: 0.04em;
-  }
-
-  .about-content .section-title {
-    font-size: 1.55rem;
-  }
-
-  .services-section .section-title.dark-text {
-    font-size: 1.4rem;
-  }
-
-  .contact-title {
-    font-size: 1.35rem;
-  }
-}
-
-/* 7. Ultra-Compact Mobile Screens (<= 360px - iPhone SE 1st gen, small Androids) */
-@media (max-width: 360px) {
   .container {
     padding: 0 0.85rem;
   }
 
   .navbar {
     height: 58px;
+    gap: 0.35rem;
+  }
+
+  .site-header.scrolled .navbar {
+    height: 56px;
   }
 
   .brand-logo img {
     height: 28px;
+    max-height: 28px;
+    max-width: 120px;
+  }
+
+  .header-actions {
+    gap: 0.3rem;
+  }
+
+  .btn-wine-header {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 4px;
+  }
+
+  .btn-wine-header svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .lang-btn {
+    height: 34px;
+    padding: 0 0.45rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    gap: 0.25rem;
+  }
+
+  .lang-flag svg {
+    width: 18px;
+    height: 12px;
+  }
+
+  .lang-chevron {
+    width: 10px;
+    height: 10px;
+  }
+
+  .mobile-menu-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 4px;
+  }
+
+  .hero-cta-headline {
+    font-size: 1.12rem;
+    letter-spacing: 0.03em;
+  }
+
+  .about-lead-single {
+    font-size: 1.05rem;
+  }
+
+  .services-section-title {
+    font-size: 1.35rem;
+  }
+
+  .international-carousel {
+    height: 340px;
+  }
+
+  .contact-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* 7. Ultra-Compact Mobile Screens (<= 360px - iPhone SE, small Androids) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.65rem;
+  }
+
+  .navbar {
+    height: 62px;
+    gap: 0.25rem;
+  }
+
+  .brand-logo img {
+    height: 34px;
+    max-height: 34px;
+    max-width: 160px;
   }
 
   .header-actions {
     gap: 0.25rem;
   }
 
+  .btn-wine-header {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+
+  .btn-wine-header svg {
+    width: 13px;
+    height: 13px;
+  }
+
   .lang-btn {
+    height: 32px;
     padding: 0 0.35rem;
     font-size: 0.72rem;
+    gap: 0.2rem;
+  }
+
+  .lang-flag svg {
+    width: 16px;
+    height: 11px;
   }
 
   .lang-chevron {
@@ -2653,59 +2831,36 @@ body.lang-fading [data-i18n-placeholder] {
   .mobile-menu-btn {
     width: 34px;
     height: 34px;
-    padding: 6px 5px;
+    min-width: 34px;
   }
 
   .hamburger-bar {
-    width: 18px;
+    width: 16px;
   }
 
   .hero-cta-headline {
-    font-size: 1.1rem;
-    letter-spacing: 0.03em;
+    font-size: 1.02rem;
+    letter-spacing: 0.02em;
   }
 
-  .about-content .section-title {
-    font-size: 1.45rem;
-  }
-
-  .services-section .section-title.dark-text {
-    font-size: 1.3rem;
-  }
-
-  .service-card-header {
-    padding: 1rem 0.85rem;
-  }
-
-  .service-card-identity {
-    gap: 0.65rem;
-  }
-
-  .service-icon-box {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-  }
-
-  .service-icon-box svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .service-card-title {
+  .about-lead-single {
     font-size: 0.98rem;
   }
 
-  .service-card-teaser {
-    font-size: 0.8rem;
+  .services-section-title {
+    font-size: 1.25rem;
+  }
+
+  .international-carousel {
+    height: 300px;
   }
 
   .contact-form-column {
-    padding: 1.35rem 0.95rem;
+    padding: 1.25rem 0.85rem;
   }
 
   .contact-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .contact-info-card {
@@ -2717,14 +2872,14 @@ body.lang-fading [data-i18n-placeholder] {
   }
 
   .whatsapp-float {
-    width: 48px;
-    height: 48px;
-    bottom: max(14px, env(safe-area-inset-bottom, 14px));
-    right: max(14px, env(safe-area-inset-right, 14px));
+    width: 46px;
+    height: 46px;
+    bottom: max(12px, env(safe-area-inset-bottom, 12px));
+    right: max(12px, env(safe-area-inset-right, 12px));
   }
 
   .modal-container {
-    padding: 1.35rem 0.95rem;
+    padding: 1.25rem 0.85rem;
   }
 }
 
