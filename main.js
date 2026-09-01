@@ -820,7 +820,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formStatus.style.display = 'none';
       }
 
-      const recipientEmail = 'jvgb.es@gmail.com';
+      const recipientEmail = 'contact@ornellasceotto.com.br';
       const payload = {
         name: name,
         phone: phone || (currentLang === 'pt' ? 'Não informado' : 'Not provided'),
